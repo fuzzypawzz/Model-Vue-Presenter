@@ -167,7 +167,7 @@ export const usePresenter = presenterFactory((props, view) => {
 })
 ```
 
-## Spy
+## spy()
 
 You can spy on a presenter instance. This is useful during unit and integration testing.
 
