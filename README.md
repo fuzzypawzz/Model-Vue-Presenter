@@ -51,7 +51,7 @@ const { viewModel, presenter } = useProductsPagePresenter()
 #### Simple presenter file:
 ```ts
 import { reactive, computed } from "vue"
-import { presenterFactory } from "@model-vue-presenter"
+import { presenterFactory } from "model-vue-presenter"
 
 import { useAvailableProducts, fetchAvailableProducts } from '../'
 

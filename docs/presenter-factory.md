@@ -13,7 +13,7 @@ function presenterFactory(callback: (props: object | void, view: object | void) 
 
 ```ts
 import { computed } from 'vue'
-import { presenterFactory } from '@model-vue-presenter'
+import { presenterFactory } from 'model-vue-presenter'
 
 type Props = void
 type View = void

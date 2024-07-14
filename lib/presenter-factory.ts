@@ -20,7 +20,10 @@ import { ERROR } from "@/constants/error";
  *       return {
  *         isPageSkeletonLoaderShown: state.showSkeleton
  *       }
- *     })
+ *     }),
+ *
+ *     onCreated() { ... },
+ *     onDestroy() { ... }
  *   }
  * })
  *
@@ -72,9 +75,9 @@ export function presenterFactory<
 
         if (viewModelOverride.value) validateViewModelOverride(viewModelOverride.value, config.viewModel.value)
 
-        config.onCreated?.()
-
         tryOnScopeDispose(() => config.onDestroy?.())
+
+        config.onCreated?.()
 
         const presenterOptions = viewModelOverride.value
             ? createPresenterProxy(config, viewModelOverride.value)

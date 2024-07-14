@@ -8,7 +8,7 @@ The presenter manages some local state like a skeleton loader while it's fetchin
 
 ```ts
 import { reactive, computed } from "vue"
-import { presenterFactory } from "@model-vue-presenter"
+import { presenterFactory } from "model-vue-presenter"
 
 import { useAvailableProducts, fetchAvailableProducts } from '../'
 

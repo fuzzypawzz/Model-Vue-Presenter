@@ -11,7 +11,7 @@ yarn add model-vue-presenter
 Import and use the presenter factory function:
 
 ```ts
-import { presenterFactory } from "@model-vue-presenter";
+import { presenterFactory } from "model-vue-presenter";
 import { computed } from "vue";
 
 const usePresenter = presenterFactory(() => {
