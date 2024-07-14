@@ -1,6 +1,10 @@
 {
   "name": "model-vue-presenter",
-  "version": "1.0.1",
+  "description": "Model-View-Presenter toolkit for Vue 3 apps",
+  "keywords": ["model-view-presenter", "vue3", "typescript", "mvp", "mvc"],
+  "author": "Jannik Maag (@fuzzypawzz)",
+  "license": "MIT",
+  "version": "1.0.2",
   "repository": {
     "url": "https://github.com/fuzzypawzz/Model-Vue-Presenter"
   },
