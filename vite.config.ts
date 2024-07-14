@@ -17,8 +17,7 @@ export default defineConfig({
 
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
-      name: 'vue-mvp-toolkit',
-      fileName: 'vue-mvp-toolkit',
+      fileName: 'main',
       formats: ['es'],
     },
 
@@ -35,7 +34,7 @@ export default defineConfig({
   plugins: [
     vue(),
     // Plugin to auto-publish the TypeScript library types.
-    dts({ include: ['lib'] })
+    dts({ include: ['lib'], outDir: 'dist/types' })
   ],
 
   resolve: {

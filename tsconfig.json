@@ -1,12 +1,12 @@
 {
+  "include": [
+    "env.d.ts",
+    "lib/**/*.d.ts",
+    "lib/**/*.ts",
+    "lib/**/*.vue",
+    "vite.config.ts"
+  ],
   "compilerOptions": {
-    "include": [
-      "env.d.ts",
-      "lib/**/*.d.ts",
-      "lib/**/*.ts",
-      "lib/**/*.vue",
-      "vite.config.ts"
-    ],
     "paths": {
       "@/*": ["./lib/*"],
       "~/*": ["./lib/*"]
@@ -38,5 +38,4 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "references": [{ "path": "./tsconfig.node.json" }]
 }
