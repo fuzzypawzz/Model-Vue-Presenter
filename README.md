@@ -4,9 +4,23 @@ The toolkit enables you to easily leverage the Model-View-Presenter design patte
 
 Separate logic from the Vue components and reduce code coupling.
 
-Works with both `Options API` and `Composition API`.
+### Documentation
+
+For detailed documentation, including API references, tutorials, and more, please see the [documentation site](https://fuzzypawzz.github.io/Model-Vue-Presenter).
+
+### Installation
+
+To begin with Model-Vue-Presenter, simply install the library:
+
+```bash
+$ npm install model-vue-presenter
+# or
+yarn add model-vue-presenter
+```
 
 ### Examples
+
+#### Clean vue component, implementing a presenter:
 
 ```vue
 <template>
@@ -34,49 +48,35 @@ const { viewModel, presenter } = useProductsPagePresenter()
 </script>
 ```
 
+#### Simple presenter file:
 ```ts
 import { reactive, computed } from "vue"
 import { presenterFactory } from "@model-vue-presenter"
 
 import { useAvailableProducts, fetchAvailableProducts } from '../'
 
-type Props = void
-type View = void
-
-export const useProductsPagePresenter = presenterFactory((props, view) => {
+export const useProductsPagePresenter = presenterFactory(() => {
   const products = useAvailableProducts()
-  
+
   const skeletonLoader = reactive({
     isShown: false,
     show() { this.isShown = true },
     hide() { this.isShown = false },
   })
-  
-  return {
-    viewModel: computed(() => {
-      return {
-        isSkeletonLoaderShown: skeletonLoader.isShown,
-        productPageHeading: 'Available products',
-        products: products.value
-      }
-    }),
 
-    // Invoked when the vue component is created.
+  return {
+    viewModel: computed(() => ({
+      isSkeletonLoaderShown: skeletonLoader.isShown,
+      productPageHeading: 'Available products',
+      products: products.value
+    })),
+
     onCreated() {
       skeletonLoader.show()
       fetchAvailableProducts().finally(() => {
         skeletonLoader.hide()
       })
     },
-
-    // Invoked when the vue component scope is disposed.
-    onDestroy() {
-      // ...
-    }
   }
 })
 ```
-
-### Documentation
-
-I am currently working on a documentation site. I will publish it as soon as it's ready.
