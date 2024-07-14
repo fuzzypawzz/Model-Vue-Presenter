@@ -1,6 +1,9 @@
 {
   "name": "model-vue-presenter",
   "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/fuzzypawzz/Model-Vue-Presenter"
+  },
   "files": [
     "dist"
   ],
