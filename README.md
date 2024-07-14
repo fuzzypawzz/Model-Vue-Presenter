@@ -79,7 +79,4 @@ export const useProductsPagePresenter = presenterFactory((props, view) => {
 
 ### Documentation
 
-- TODO: Upload documentation site.
-- TODO: How to use it in Vue components, options vs composition.
-- TODO: How to use it to mock pages in Storybook.
-- TODO: How to spy on presenter instances in tests.
+I am currently working on a documentation site. I will publish it as soon as it's ready.
