@@ -8,6 +8,9 @@ Separate logic from the Vue components and reduce code coupling.
 
 For detailed documentation, including API references, tutorials, and more, please see the [documentation site](https://fuzzypawzz.github.io/Model-Vue-Presenter).
 
+You can find [the package on npm](https://www.npmjs.com/package/model-vue-presenter).
+
+
 ### Installation
 
 To begin with Model-Vue-Presenter, simply install the library:
