@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Model-Vue-Presenter",
+  base: "/Model-Vue-Presenter/",
   description: "Documentation for the Model Vue Presenter library",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
