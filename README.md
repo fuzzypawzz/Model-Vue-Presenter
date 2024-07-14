@@ -40,7 +40,10 @@ import { presenterFactory } from "@model-vue-presenter"
 
 import { useAvailableProducts, fetchAvailableProducts } from '../'
 
-export const useProductsPagePresenter = presenterFactory(() => {
+type Props = void
+type View = void
+
+export const useProductsPagePresenter = presenterFactory((props, view) => {
   const products = useAvailableProducts()
   
   const skeletonLoader = reactive({
@@ -57,13 +60,19 @@ export const useProductsPagePresenter = presenterFactory(() => {
         products: products.value
       }
     }),
-    
+
+    // Invoked when the vue component is created.
     onCreated() {
       skeletonLoader.show()
       fetchAvailableProducts().finally(() => {
         skeletonLoader.hide()
       })
     },
+
+    // Invoked when the vue component scope is disposed.
+    onDestroy() {
+      // ...
+    }
   }
 })
 ```
