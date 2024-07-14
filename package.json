@@ -21,7 +21,10 @@
   "type": "module",
   "scripts": {
     "build": "vue-tsc && vite build",
-    "test": "vitest"
+    "test": "vitest",
+    "dev:docs": "vite --config docs/vite.config.ts",
+    "preview:docs": "vite preview --config docs/vite.config.ts",
+    "build:docs": "vite build --config docs/vite.config.ts"
   },
   "peerDependencies": {
     "vue": ">=3.0.0 <4.0.0"
