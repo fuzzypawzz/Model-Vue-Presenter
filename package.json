@@ -10,8 +10,8 @@
   ],
   "author": "Jannik Maag (@fuzzypawzz)",
   "license": "MIT",
-  "version": "1.0.4",
-  "homepage": "https://github.com/fuzzypawzz/Model-Vue-Presenter#readme",
+  "version": "1.0.5",
+  "homepage": "https://fuzzypawzz.github.io/Model-Vue-Presenter",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fuzzypawzz/Model-Vue-Presenter.git"
