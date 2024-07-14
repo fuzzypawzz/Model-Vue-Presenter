@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "include": [
+      "env.d.ts",
+      "lib/**/*.d.ts",
+      "lib/**/*.ts",
+      "lib/**/*.vue",
+      "vite.config.ts"
+    ],
+    "paths": {
+      "@/*": ["./lib/*"],
+      "~/*": ["./lib/*"]
+    },
+
+    "declaration": true,
+    "declarationDir": "./dist",
+    "sourceMap": true,
+    "outDir": "dist",
+
+    "target": "ES6",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES6","DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "types": ["vite/client"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
