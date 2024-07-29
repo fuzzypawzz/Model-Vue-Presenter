@@ -75,7 +75,10 @@ export function presenterFactory<
 
         if (viewModelOverride.value) validateViewModelOverride(viewModelOverride.value, config.viewModel.value)
 
-        tryOnScopeDispose(() => config.onDestroy?.())
+        tryOnScopeDispose(() => {
+            config.onDestroy?.()
+            cachedPresenterInstance.reset()
+        })
 
         config.onCreated?.()
 
