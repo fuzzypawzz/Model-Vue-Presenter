@@ -10,7 +10,7 @@
   ],
   "author": "Jannik Maag (@fuzzypawzz)",
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "https://fuzzypawzz.github.io/Model-Vue-Presenter",
   "repository": {
     "type": "git",
@@ -48,5 +48,8 @@
     "vue": "^3.4.9",
     "vue-tsc": "^2.0.26",
     "wait-for-expect": "^3.0.2"
+  },
+  "dependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2"
   }
 }

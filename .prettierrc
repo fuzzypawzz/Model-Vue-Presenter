@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "printWidth": 100,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "proseWrap": "always",
+  "arrowParens": "always",
+  "importOrder": [
+    "^vue$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/Atlas.(Core|E2E|Logic|Service|UI)/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrderGroupNamespaceSpecifiers": false,
+  "importOrderParserPlugins": ["typescript", "decorators"],
+  "htmlWhitespaceSensitivity": "ignore"
+}
