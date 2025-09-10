@@ -4,6 +4,9 @@
     "lib/**/*.d.ts",
     "lib/**/*.ts",
     "lib/**/*.vue",
+    "__tests__/**/*.d.ts",
+    "__tests__/**/*.ts",
+    "__tests__/**/*.vue",
     "vite.config.ts"
   ],
   "compilerOptions": {
@@ -20,7 +23,7 @@
     "target": "ES6",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ES6","DOM", "DOM.Iterable"],
+    "lib": ["ES6", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "types": ["vite/client"],
 
@@ -37,5 +40,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-  },
+  }
 }
