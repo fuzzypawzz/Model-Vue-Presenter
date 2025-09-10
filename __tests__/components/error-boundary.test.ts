@@ -1,12 +1,12 @@
 import { defineComponent } from 'vue'
 
 import { mount } from '@vue/test-utils'
-import { expect, it } from 'vitest'
+import { expect, test } from 'vitest'
 
 import { presenterFactory } from '../../lib/presenter-factory'
 import ErrorBoundary from './error-boundary.vue'
 
-it('error boundary catches presenter errors', async () => {
+test('presenters throwing error will trigger error boundaries and not crash the component because the viewModel is undefined', async () => {
   const ChildComponent = defineComponent({
     setup() {
       const useThrowingPresenter = presenterFactory(() => {
