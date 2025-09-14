@@ -1,4 +1,4 @@
-import { computed, getCurrentScope, onMounted } from 'vue'
+import { computed, getCurrentInstance, onMounted } from 'vue'
 
 import { ERROR } from '@/constants/error'
 import { tryOnScopeDispose } from '@/helpers/try-on-scope-dispose'
@@ -89,7 +89,7 @@ export function presenterFactory<
        * when they access the viewModel like this `my-attr="viewModel.someProperty"`.
        * Else we would get errors "TypeError: Cannot read properties of undefined (reading 'someProperty')"
        */
-      if (getCurrentScope()) {
+      if (getCurrentInstance()) {
         onMounted(() => {
           throw errorInPresenter
         })

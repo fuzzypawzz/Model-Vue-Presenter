@@ -1,4 +1,4 @@
-import { computed, ref } from 'vue'
+import { computed, effectScope, ref } from 'vue'
 
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
@@ -31,7 +31,7 @@ describe('presenter factory behaviour', () => {
     expect(onCreatedMockedFunction).toHaveBeenCalledTimes(1)
   })
 
-  it('invokes the destroy function when the outputted usePresenter hook is called', async () => {
+  it('invokes the destroy function when the connected component is unmounted', async () => {
     const { usePresenter, onDestroyMockedFunction } =
       testHarness.createPresenterHookWithOnCreatedAndDestroyHooks()
 
@@ -69,12 +69,22 @@ describe('presenter factory behaviour', () => {
     })
   })
 
-  it('does not swallow errors thrown inside the presentrer', () => {
+  it('does not swallow errors thrown inside the presenter', () => {
     const usePresenter = presenterFactory(() => {
       throw 'Thrown from inside the presenter'
     })
 
     expect(() => usePresenter()).toThrow('Thrown from inside the presenter')
+  })
+
+  it('does not swallow errors thrown inside the presenter when a presenter is wrapped in an effect scope', () => {
+    const scope = effectScope()
+
+    const usePresenter = presenterFactory(() => {
+      throw 'Thrown from inside the presenter'
+    })
+
+    expect(() => scope.run(() => usePresenter())).toThrow('Thrown from inside the presenter')
   })
 })
 
