@@ -33,12 +33,20 @@
     "docs:preview": "vitepress preview docs"
   },
   "peerDependencies": {
-    "vue": ">=3.0.0 <4.0.0"
+    "vue": ">=3.0.0 <4.0.0",
+    "eslint": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/node": "^20.10.8",
+    "@typescript-eslint/parser": "^8.57.0",
     "@vitejs/plugin-vue": "^4.5.2",
     "@vue/test-utils": "^2.4.3",
+    "eslint": "^10.0.3",
     "jsdom": "^23.2.0",
     "typescript": "^5.5.3",
     "vite": "^5.0.8",
