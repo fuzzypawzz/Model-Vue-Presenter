@@ -25,6 +25,16 @@
   "main": "./dist/main.js",
   "types": "dist/types/main.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./dist/types/main.d.ts"
+    },
+    "./eslint": {
+      "import": "./dist/eslint.js",
+      "types": "./dist/types/eslint/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "vue-tsc && vite build",
     "test": "vitest",
@@ -33,12 +43,20 @@
     "docs:preview": "vitepress preview docs"
   },
   "peerDependencies": {
-    "vue": ">=3.0.0 <4.0.0"
+    "vue": ">=3.0.0 <4.0.0",
+    "eslint": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/node": "^20.10.8",
+    "@typescript-eslint/parser": "^8.57.0",
     "@vitejs/plugin-vue": "^4.5.2",
     "@vue/test-utils": "^2.4.3",
+    "eslint": "^10.0.3",
     "jsdom": "^23.2.0",
     "typescript": "^5.5.3",
     "vite": "^5.0.8",
