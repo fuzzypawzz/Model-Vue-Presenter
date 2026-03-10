@@ -25,7 +25,7 @@ export default defineConfig({
     },
 
     rollupOptions: {
-      external: ["vue", "eslint"],
+      external: ["vue", "eslint", "node:fs", "node:path", "fs", "path"],
       output: {
         globals: {
           vue: 'Vue'
