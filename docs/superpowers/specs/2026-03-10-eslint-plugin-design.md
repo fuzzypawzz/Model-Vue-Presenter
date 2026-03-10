@@ -69,7 +69,7 @@ If no destructuring of `viewModel` is found, the `.vue` file is skipped — it i
 
 For each matching `.vue` file (with a resolved local name), extracts the raw text of both `<template>` and `<script setup>` sections. For each viewModel property, checks for the pattern `localName.propertyName` using a word-boundary-aware regex.
 
-A property is considered **used** if it appears in at least one importing `.vue` file.
+A property is considered **used** only if it appears in **every** importing `.vue` file (each file is analyzed independently).
 
 ### Step 5 — Reporting
 
