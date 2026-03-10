@@ -240,6 +240,30 @@ describe('view model mocking', () => {
     expect(usePresenter).toThrow(expectedError)
   })
 
+  it('throws if the mocked view model contains wrong properties, even when the presenter crashes', () => {
+    const usePresenter = presenterFactory(() => {
+      return {
+        viewModel: computed(() => {
+          return {
+            lastName: 'Macurdy'
+          }
+        })
+      }
+    })
+
+    usePresenter.mockViewModel((vm) => {
+      return {
+        ...vm,
+        lastName: 'Eliason',
+        doesNotExistInActualViewModel: 'doesNotExistOnActualViewModel'
+      }
+    })
+
+    expect(usePresenter).toThrow(
+      "Some mocked view model properties [doesNotExistInActualViewModel] doesn't exist in the actual view model."
+    )
+  })
+
   it('throws if the mocked view model does not have all the properties from the actual view model', () => {
     const usePresenter = testHarness.createPresenterHook()
 
