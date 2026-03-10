@@ -10,7 +10,7 @@
   ],
   "author": "Jannik Maag (@fuzzypawzz)",
   "license": "MIT",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "homepage": "https://fuzzypawzz.github.io/Model-Vue-Presenter",
   "repository": {
     "type": "git",
@@ -27,12 +27,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/main.js",
-      "types": "./dist/types/main.d.ts"
+      "types": "./dist/types/main.d.ts",
+      "import": "./dist/main.js"
     },
     "./eslint": {
-      "import": "./dist/eslint.js",
-      "types": "./dist/types/eslint/index.d.ts"
+      "types": "./dist/types/eslint/index.d.ts",
+      "import": "./dist/eslint.js"
     }
   },
   "scripts": {
