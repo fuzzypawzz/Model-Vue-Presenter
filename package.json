@@ -25,6 +25,16 @@
   "main": "./dist/main.js",
   "types": "dist/types/main.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./dist/types/main.d.ts"
+    },
+    "./eslint": {
+      "import": "./dist/eslint.js",
+      "types": "./dist/types/eslint/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "vue-tsc && vite build",
     "test": "vitest",

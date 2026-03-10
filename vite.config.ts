@@ -16,13 +16,16 @@ export default defineConfig({
     sourcemap: true,
 
     lib: {
-      entry: resolve(__dirname, 'lib/main.ts'),
-      fileName: 'main',
+      entry: {
+        main: resolve(__dirname, 'lib/main.ts'),
+        eslint: resolve(__dirname, 'lib/eslint/index.ts'),
+      },
       formats: ['es'],
+      fileName: (_format, entryName) => `${entryName}.js`,
     },
 
     rollupOptions: {
-      external: ["vue"],
+      external: ["vue", "eslint"],
       output: {
         globals: {
           vue: 'Vue'

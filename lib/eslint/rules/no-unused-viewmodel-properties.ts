@@ -142,8 +142,9 @@ function isPropertyUsedInVueFile(vueFilePath: string, propertyName: string): boo
   const templateContent = templateMatch?.[1] ?? ''
 
   // Negative lookbehind on left + negative lookahead on right = full word boundary
+  // Matches both `localName.property` (template auto-unwrap) and `localName.value.property` (script access)
   const regex = new RegExp(
-    `(?<![\\w$])${escapeRegex(localName)}\\.${escapeRegex(propertyName)}(?![\\w$])`
+    `(?<![\\w$])${escapeRegex(localName)}(?:\\.value)?\\.${escapeRegex(propertyName)}(?![\\w$])`
   )
 
   return regex.test(templateContent) || regex.test(scriptContent)
@@ -169,13 +170,13 @@ const rule: Rule.RuleModule = {
       CallExpression(node) {
         if (node.callee.type !== 'Identifier' || node.callee.name !== 'presenterFactory') return
 
-        const properties = extractViewModelProperties(node)
+        const properties = extractViewModelProperties(node as unknown as CallExpression)
         if (properties.length === 0) return
 
         const presenterFilePath =
           typeof (context as any).filename === 'string'
             ? (context as any).filename
-            : context.getFilename()
+            : (context as any).getFilename()
 
         const projectRoot = findProjectRoot(presenterFilePath)
         const vueFiles = findVueFiles(projectRoot)

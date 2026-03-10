@@ -6,5 +6,5 @@
 import { useCounterPresenter } from './use-counter.presenter'
 import { watch } from 'vue'
 const { viewModel: counterVM } = useCounterPresenter()
-watch(() => counterVM.isEven, (val) => console.log(val))
+watch(() => counterVM.value.isEven, (val) => console.log(val))
 </script>
